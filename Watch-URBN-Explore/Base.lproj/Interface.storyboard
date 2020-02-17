@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SF-UI-Display-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="MainWatchInterface" title="Main" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch_URBN_Explore" customModuleProvider="target">
+                    <items>
+                        <label width="0.90000000000000002" alignment="center" text="Please open your iOS device use the watch" textAlignment="left" numberOfLines="0" id="L3g-Ly-fPY"/>
+                        <imageView width="75" height="70" alignment="center" image="watch_floor_2a" contentMode="scaleAspectFit" id="k41-gp-5ag"/>
+                        <label width="136" alignment="center" text="Current Floor:" textAlignment="center" baselineAdjustment="alignCenters" id="Egd-QS-rcq"/>
+                        <button width="1" alignment="center" verticalAlignment="center" hidden="YES" title="Route Detail" id="LJE-pe-Erx">
+                            <connections>
+                                <action selector="showDetailAction" destination="AgC-eL-Hgc" id="vGD-6b-WGO"/>
+                                <segue destination="8uk-8a-b9e" kind="push" identifier="routeDetail" id="FBQ-0x-8pX"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="currentFloorHelperText" destination="Egd-QS-rcq" id="H9W-69-0Ys"/>
+                        <outlet property="currentFloorImage" destination="k41-gp-5ag" id="Ndo-lX-Iw4"/>
+                        <outlet property="helperText" destination="L3g-Ly-fPY" id="0zj-Zc-0Xt"/>
+                        <outlet property="routeDetail" destination="LJE-pe-Erx" id="DgU-Fu-jhe"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="139" y="341"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="Kpa-5a-0fG">
+            <objects>
+                <controller identifier="SecondInterface" title="Detail" id="8uk-8a-b9e" customClass="DetailInterfaceController" customModule="Watch_URBN_Explore_Extension">
+                    <items>
+                        <group width="130" height="37" alignment="center" id="4mJ-XB-3Z2">
+                            <items>
+                                <label width="100" alignment="left" verticalAlignment="center" text=" 241" textAlignment="left" baselineAdjustment="alignCenters" id="Rqn-OR-t9X">
+                                    <fontDescription key="font" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="30"/>
+                                </label>
+                                <imageView width="28" height="37" alignment="right" verticalAlignment="center" image="screenIm" contentMode="scaleAspectFit" id="5BD-bi-goO"/>
+                            </items>
+                        </group>
+                        <label width="0.90000000000000002" alignment="center" text="Computer Classroom" textAlignment="left" baselineAdjustment="alignCenters" numberOfLines="0" id="Hk0-gQ-ar9">
+                            <fontDescription key="font" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="14"/>
+                        </label>
+                        <label width="0.90000000000000002" height="105" alignment="center" text="A grouping of the advisor offices for westohal students. board outside the office stares open hours by day" textAlignment="left" baselineAdjustment="alignCenters" numberOfLines="6" id="WpA-Rb-WWE">
+                            <color key="textColor" red="0.65490196078431373" green="0.66666666666666663" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="13"/>
+                        </label>
+                        <label width="0.90000000000000002" alignment="center" text="Features" textAlignment="left" baselineAdjustment="alignCenters" id="lGb-Qs-WfR">
+                            <color key="textColor" red="0.65490196079999996" green="0.66666666669999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="14"/>
+                        </label>
+                        <label width="0.90000000000000002" alignment="center" text="Computers, Whiteboard, Projector" textAlignment="left" baselineAdjustment="alignCenters" numberOfLines="6" id="qnv-E8-J8G">
+                            <color key="textColor" red="0.0" green="0.59999999999999998" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="13"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="currentRoomDesc" destination="WpA-Rb-WWE" id="3Gl-rw-lh6"/>
+                        <outlet property="currentRoomFeat" destination="qnv-E8-J8G" id="UnJ-Qi-frA"/>
+                        <outlet property="currentRoomName" destination="Hk0-gQ-ar9" id="mWm-aE-WLw"/>
+                        <outlet property="currentRoomNumber" destination="Rqn-OR-t9X" id="cpC-kW-bmN"/>
+                        <outlet property="currentRoomType" destination="5BD-bi-goO" id="HrD-MG-nE4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="419" y="341"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Notification" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="154" y="714"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Watch_URBN_Explore" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="714"/>
+        </scene>
+    </scenes>
+</document>
